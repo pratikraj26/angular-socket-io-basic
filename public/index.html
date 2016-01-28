@@ -1,28 +1,38 @@
 <!DOCTYPE html>
 <html ng-app="app">
 <head>
-	<title>AngularJS CollabBoard</title>
-	
+	<title>AngularJS, Express and Socket.io Basic Skeleton</title>
+	<base href="/">
+	<!-- Load the socket client file -->
 	<script src="/socket.io/socket.io.js"></script>
-	<script src="http://code.jquery.com/jquery-1.8.3.js"></script>
-	<script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
-	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.3/angular.min.js"></script>
-	<script src="/js/collab-board.js"></script>	
 
-	<link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/css/bootstrap-combined.min.css" rel="stylesheet">
+	<!-- Load LUMX CSS -->
+	<link rel="stylesheet" href="bower_components/lumx/dist/lumx.css">
+	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700">
+
+	<!-- Load LUMX scripts -->
+	<script src="bower_components/jquery/dist/jquery.js"></script>
+	<script src="bower_components/velocity/velocity.js"></script>
+	<script src="bower_components/moment/min/moment-with-locales.js"></script>
+	<script src="bower_components/angular/angular.js"></script>
+	<script src="bower_components/lumx/dist/lumx.js"></script>
+
+	<!-- Load angular relsted files -->
+	<script src="bower_components/angular-route/angular-route.min.js"></script>
+
+	<!-- Load app files -->
+	<script src="index.js"></script>
+	<script src="/js/controllers.js"></script>
+	<script src="/js/directive.js"></script>
+	<script src="/js/socketFactory.js"></script>
+	<script src="/js/factory.js"></script>
+
 	<link rel="stylesheet" href="/css/app.css">
 </head>
 <body ng-controller="MainCtrl">
-	<div class="navbar navbar-inverse">
-		<div class="navbar-inner">
-			<a class="brand" href="#">AngularJS CollabBoard</a>
-			<button id="createButton" ng-click="createNote()" class="btn btn-info pull-right">Create Note</button>
-		</div>
-	</div>
-	<div sticky-note ng-repeat="note in notes" note="note" class="alert alert-block sticky-note" ondelete="deleteNote(id)">
-		<button type="button" class="close" ng-click="deleteNote(note.id)">&times;</button>
-		<input ng-model="note.title" ng-change="updateNote(note)" type="text" class="title" >
-		<textarea ng-model="note.body" ng-change="updateNote(note)" class="body">{{note.body}}</textarea>
-	</div>
+	<section ng-view></section>
+	<center>
+		<p>This page {{page}}. The name has been requested from the controller</p>
+	</center>
 </body>
 </html>

@@ -1,17 +1,19 @@
 {
-  "name": "angular-collab-board",
-  "description": "AngularJS Collobaration Board",
-  "version": "0.0.1-1",
-  "private": true,
-  "dependencies": {
-    "express": "3.x",
-    "socket.io": "0.9.x"
-  },
-  "subdomain": "simpulton.angularjs-collab-board",
+  "name": "angular-socket-io-basic",
+  "version": "1.0.0",
+  "description": "This is a skeleton for angular js, socket.io with express",
+  "main": "index.js",
   "scripts": {
-    "start": "app.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "engines": {
-    "node": "0.8.x"
-  }
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pratikraj26/angular-socket-io-basic.git"
+  },
+  "author": "Pratik Raj",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pratikraj26/angular-socket-io-basic/issues"
+  },
+  "homepage": "https://github.com/pratikraj26/angular-socket-io-basic#readme"
 }
